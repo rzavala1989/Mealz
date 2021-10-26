@@ -1,11 +1,12 @@
 import React from 'react';
-import { StatusBar, SafeAreaView, FlatList, StyleSheet } from 'react-native';
+import { FlatList } from 'react-native';
 import { Search } from '../../../components/Search';
 import { RestaurantCardInfo } from '../components/restaurant-card.component';
+import { SafeArea } from '../../../components/utils/safe-area.component';
 
 export const RestaurantsScreen = () => {
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeArea>
       <Search />
       <FlatList
         data={[{ name: 1 }, { name: 2 }, { name: 3 }, { name: 4 }]}
@@ -14,14 +15,6 @@ export const RestaurantsScreen = () => {
         contentContainerStyle={{ padding: 16 }}
         //inline style for simplicity
       />
-    </SafeAreaView>
+    </SafeArea>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: StatusBar.currentHeight,
-    backgroundColor: '#fff',
-  },
-});
