@@ -8,19 +8,12 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { Ionicons } from '@expo/vector-icons';
 import { RestaurantsNavigator } from './restaurants.navigator';
+import { MapScreen } from '../../features/map/screens/map.screen';
 
 const SettingsScreen = () => {
   return (
     <SafeArea>
       <Text>Settings!</Text>
-    </SafeArea>
-  );
-};
-
-const MapScreen = () => {
-  return (
-    <SafeArea>
-      <Text>Map!</Text>
     </SafeArea>
   );
 };
