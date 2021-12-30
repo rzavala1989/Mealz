@@ -8,7 +8,7 @@ const SearchContainer = styled.View`
   padding: ${(props) => props.theme.space[3]};
 `;
 
-export const Search = () => {
+export const Search = ({ isFavoritesToggled, onFavoritesToggle }) => {
   //global context
   const { keyword, search } = useContext(LocationContext);
   //local state
@@ -21,6 +21,8 @@ export const Search = () => {
   return (
     <SearchContainer>
       <Searchbar
+        icon={isFavoritesToggled ? 'heart' : 'heart-outline'}
+        onIconPress={onFavoritesToggle}
         placeholder='Search for a city, find food...'
         value={searchKeyword}
         onSubmitEditing={() => {

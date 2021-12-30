@@ -18,6 +18,7 @@ import { theme } from './src/infrastructure/theme';
 //Adding a Context
 import { RestaurantsContextProvider } from './src/services/restaurants/restaurants.context';
 import { LocationContextProvider } from './src/services/location/locations.context';
+import { FavoritesContextProvider } from './src/services/favorites/favorites.context';
 
 export default function App() {
   const [loaded] = useFonts({ Oswald_400Regular, Lato_400Regular });
@@ -29,11 +30,13 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <LocationContextProvider>
-          <RestaurantsContextProvider>
-            <Navigation />
-          </RestaurantsContextProvider>
-        </LocationContextProvider>
+        <FavoritesContextProvider>
+          <LocationContextProvider>
+            <RestaurantsContextProvider>
+              <Navigation />
+            </RestaurantsContextProvider>
+          </LocationContextProvider>
+        </FavoritesContextProvider>
       </ThemeProvider>
       <ExpoStatusBar style='auto' />
     </>
